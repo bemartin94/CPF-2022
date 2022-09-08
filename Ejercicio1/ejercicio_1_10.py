@@ -6,5 +6,7 @@ def sevenBoom(array):
 
     if len(lista_boom):
         return "Boom!"
+    else:
+        return "No se encuentra el número 7 en el array"
 
 

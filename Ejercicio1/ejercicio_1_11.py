@@ -1,3 +1,6 @@
+##acá la segunda prueba no funciona porque entendi mal la consigna
+##REVISAR
+
 def letrasMultiplicadas(letras, numero):
     lista_letras = []
     resultado_final = []

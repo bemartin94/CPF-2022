@@ -4,6 +4,6 @@ def square_digits(numero):
     for digito in str(numero):
        cuadrados.append(str(int(digito)*int(digito)))
     resultado = "".join(cuadrados)
-    return resultado
+    return int(resultado)
 
 
