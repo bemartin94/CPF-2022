@@ -1,6 +1,3 @@
-##acá la segunda prueba no funciona porque entendi mal la consigna
-##REVISAR
-
 def letrasMultiplicadas(letras, numero):
     lista_letras = []
     resultado_final = []
@@ -15,8 +12,11 @@ def letrasMultiplicadas(letras, numero):
 
     for letra in lista_letras:
         contador = numero
-        while contador > 0:
+        if len(letra) <= contador:
             resultado_final.append(letra[0])
-            contador -= 1
+        else:
+            while contador > 0:
+                resultado_final.append(letra[0])
+                contador -= 1
 
     return ''.join(resultado_final)
