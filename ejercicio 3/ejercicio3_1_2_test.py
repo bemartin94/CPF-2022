@@ -1,6 +1,6 @@
 
 import unittest
-from ejercicio_3_1_2 import Lampara
+from ejercicio3_1_2 import Lampara
 
 class Ejercicio2TestCase(unittest.TestCase):
     def test_prender(self):
