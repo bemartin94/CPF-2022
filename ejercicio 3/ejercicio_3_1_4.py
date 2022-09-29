@@ -22,8 +22,7 @@ class Punto:
         return math.dist((self.x,self.y),(0,0))
 
     def __eq__(self, other):
-        return self.x == other.punto_a and \
-               self.y == other.y
+        return self.x == other.x and self.y == other.y
 
     def get_x(self):
         return self.x

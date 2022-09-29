@@ -1,0 +1,35 @@
+from carta import Carta
+import random
+
+class Juego:
+    def __init__(self, jugadores, mazo):
+        self.jugadores = jugadores
+        self.mazo = mazo
+    def iniciar(self):
+        Mazo.mezclar(self)
+
+class Mazo:
+    def __init__(self):
+        self.cartas = self.generar_mazo()
+
+    def generar_mazo(self):
+        mazo=[]
+        palos=["oro", "espada", "basto", "copa"]
+        for palo in palos:
+            for numero in range(1,13):
+                mazo.append(Carta(palo, numero))
+        return mazo
+
+    def mezclar_mazo(self):
+        random.shuffle(mazo)
+
+
+
+class Jugador:
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+    def tomar_carta(self, Mazo):
+        mazo
+
+
