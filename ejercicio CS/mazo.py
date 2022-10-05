@@ -1,13 +1,6 @@
 from carta import Carta
 import random
 
-class Juego:
-    def __init__(self, jugadores, mazo):
-        self.jugadores = jugadores
-        self.mazo = mazo
-    def iniciar(self):
-        Mazo.mezclar(self)
-
 class Mazo:
     def __init__(self):
         self.cartas = self.generar_mazo()
@@ -21,15 +14,19 @@ class Mazo:
         return mazo
 
     def mezclar_mazo(self):
-        random.shuffle(mazo)
+        random.shuffle(self.cartas)
 
+    def sacar_carta(self):
+        carta_activa = self.cartas.pop()
+        return carta_activa
 
+    def reiniciar_mazo(self):
+        Mazo.generar_mazo(self)
 
-class Jugador:
-    def __init__(self, nombre):
-        self.nombre = nombre
+    def imprimir_mazo(self):
+        for carta in self.cartas:
+            print(carta)
 
-    def tomar_carta(self, Mazo):
-        mazo
-
-
+nuevo_mazo= Mazo()
+nuevo_mazo.mezclar_mazo()
+nuevo_mazo.imprimir_mazo()
