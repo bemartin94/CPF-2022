@@ -13,7 +13,7 @@ class Mazo:
                 mazo.append(Carta(palo, numero))
         return mazo
 
-    def mezclar_mazo(self):
+    def mezclar(self):
         random.shuffle(self.cartas)
 
     def sacar_carta(self):
@@ -26,7 +26,3 @@ class Mazo:
     def imprimir_mazo(self):
         for carta in self.cartas:
             print(carta)
-
-nuevo_mazo= Mazo()
-nuevo_mazo.mezclar_mazo()
-nuevo_mazo.imprimir_mazo()

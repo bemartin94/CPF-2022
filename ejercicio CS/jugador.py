@@ -4,5 +4,5 @@ class Jugador:
         self.nombre = nombre
 
     def tomar_carta(self, mazo):
-       mazo.sacar_carta()
+       return mazo.sacar_carta()
 

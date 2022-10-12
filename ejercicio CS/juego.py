@@ -1,13 +1,15 @@
+from jugador import Jugador
+from mazo import Mazo
 
 class Juego:
     def __init__(self, jugadores, mazo):
         self.jugadores = jugadores
         self.mazo = mazo
 
-    def iniciar(self, mazo, indice):
-        mazo.mezclar(self)
-        while not self.finalizado:
-            self.ronda(mazo, indice)
+    def iniciar(self):
+        self.mazo.mezclar()
+        while not self.finalizado():
+            self.juego()
 
     def obtener_indice_jugador(self, jugador):
         contador = 0
@@ -18,18 +20,32 @@ class Juego:
             contador +=1
         return indice
 
-
-    def ronda(self, mazo, indice):
-        for jugador in self.jugadores:
-            carta = jugador.tomar_carta(mazo)
+    def juego(self):
+        salio_el_1_de_oro = False
+        contador = 0
+        while not salio_el_1_de_oro:
+            carta = self.jugadores[contador].tomar_carta(self.mazo)
+            contador +=1
             if carta.es_1_de_oro():
-                self.eliminar_jugador(indice)
+               indice = self.obtener_indice_jugador(self.jugadores)
+               self.eliminar_jugador(indice)
+               salio_el_1_de_oro = True
+            if contador == 2:
+                contador = 0
 
     def finalizado(self):
         return len(self.jugadores) < 1
 
     def get_ganador(self):
-        pass
+        if self.finalizado():
+            return self.jugadores
 
     def eliminar_jugador(self, indice):
-            del self.jugadores[indice]
+         del self.jugadores[indice]
+
+jugadores = [Jugador("Ignacio"), Jugador("Asbel"), Jugador("Angel")]
+mazo = Mazo()
+juego = Juego(jugadores=jugadores, mazo=mazo)
+juego.iniciar()
+print(juego.get_ganador())
+#en eliminar jugador paso como parametro el metodo obtener_indice
