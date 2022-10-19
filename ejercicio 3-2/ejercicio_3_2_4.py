@@ -8,10 +8,9 @@ class Contacto:
 
 
 class Agenda:
-    def __init__(self, contactos, cantidad_de_contactos =10):
-        self.contactos = contactos
+    def __init__(self, cantidad_de_contactos =10):
+        self.contactos = []
         self.cantidad_de_contactos = cantidad_de_contactos
-
 
     def anadirContacto(self, contacto):
         pass
