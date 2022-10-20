@@ -8,14 +8,16 @@ class Instrumento:
         pass
 
 class Guitarra(Instrumento):
-    def __init__(self, precio, marca, modelo):
-        Punto.__init__(self, x, y)
-        super().__init__(x, y)
-        self.z = z
+    def tocar(self):
+        print("Sonando como una guitarra")
 
 class Bateria(Instrumento):
-    pass
+    def tocar(self):
+        print("Sonando como una bateria")
 
 class Piano(Instrumento):
-    pass
+    def tocar(self):
+        print("Sonando como un piano")
+
+
 
