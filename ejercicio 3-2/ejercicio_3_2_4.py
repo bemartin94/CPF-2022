@@ -6,7 +6,6 @@ class Contacto:
     def __str__(self):
         return "{},{}".format(self.nombre, self.telefono)
 
-
 class Agenda:
     def __init__(self, cantidad_de_contactos =10):
         self.contactos = []
@@ -15,7 +14,8 @@ class Agenda:
     def anadirContacto(self, contacto):
         if len(self.contactos) <= self.cantidad_de_contactos - 1:
             self.contactos.append(contacto)
-            print("Contacto agregado")
+            print("Contacto agregado", self.contactos)
+
         else:
             print("Agenda completa")
 
@@ -37,7 +37,14 @@ class Agenda:
         print("Se eliminó el contacto especificado")
 
     def agendaLlena(self):
-        pass
+        return len(self.contactos) == self.cantidad_de_contactos - 1
 
     def huecosLibres(self):
-        pass
+        return self.cantidad_de_contactos - len(self.contactos)
+
+nueva_agenda = Agenda()
+nueva_agenda.anadirContacto("juan")
+nueva_agenda.anadirContacto("jaime")
+nueva_agenda.anadirContacto("jerome")
+print(nueva_agenda.existeContacto("jaime"))
+print(nueva_agenda.buscaContacto("jaime"))

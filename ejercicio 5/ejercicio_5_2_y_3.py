@@ -1,7 +1,11 @@
 class Vehiculo:
-    def __init__(self, color, ruedas):
+    def __init__(self, color, ruedas, distanciaRecorrida):
         self.color = color
         self.ruedas = ruedas
+        self.distanciaRecorrida= distanciaRecorrida
+
+    def recorrerDistancia(self, distancia):
+        self.distanciaRecorrida += distancia
 
     def get_ruedas(self):
         return self.ruedas
@@ -10,8 +14,8 @@ class Vehiculo:
         return self.color
 
 class Bicicleta(Vehiculo):
-    def __init__(self, color, ruedas, tipo):
-        Vehiculo.__init__(self, color, ruedas)
+    def __init__(self, color, ruedas, tipo, distanciaRecorrida):
+        Vehiculo.__init__(self, color, ruedas, distanciaRecorrida)
         self.tipo =  tipo
 
     def get_tipo(self):
