@@ -6,6 +6,7 @@ class Instrumento:
 
     def tocar(self):
         pass
+
 class Guitarra(Instrumento):
     def tocar(self):
         print("Sonando como una guitarra")

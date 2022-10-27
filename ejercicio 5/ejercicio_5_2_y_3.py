@@ -66,3 +66,4 @@ class Camioneta(Coche):
 
     def get_carga(self):
         return self.carga
+
