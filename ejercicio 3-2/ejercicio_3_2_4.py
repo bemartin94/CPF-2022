@@ -11,10 +11,13 @@ class Agenda:
         self.contactos = []
         self.cantidad_de_contactos = cantidad_de_contactos
 
-    def anadirContacto(self, contacto):
+    def anadirContacto(self, nombre, telefono):
+        contacto = Contacto("","")
         if len(self.contactos) <= self.cantidad_de_contactos - 1:
+            contacto.nombre = nombre
+            contacto.telefono = telefono
             self.contactos.append(contacto)
-            print("Contacto agregado", self.contactos)
+            print("Contacto agregado", contacto)
 
         else:
             print("Agenda completa")
@@ -43,8 +46,8 @@ class Agenda:
         return self.cantidad_de_contactos - len(self.contactos)
 
 nueva_agenda = Agenda()
-nueva_agenda.anadirContacto("juan")
-nueva_agenda.anadirContacto("jaime")
-nueva_agenda.anadirContacto("jerome")
+nueva_agenda.anadirContacto("juan", 23)
+nueva_agenda.anadirContacto("jaime", 24)
+nueva_agenda.anadirContacto("jerome", 25)
 print(nueva_agenda.existeContacto("jaime"))
 print(nueva_agenda.buscaContacto("jaime"))
