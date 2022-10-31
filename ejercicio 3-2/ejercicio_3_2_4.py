@@ -31,16 +31,23 @@ class Agenda:
     def listarContactos(self):
         for contacto in self.contactos:
             print(contacto.__str__())
+        if len(self.contactos) == 0:
+            print("La agenda está vacía. Presioná 1 para agregar un contacto")
 
     def buscaContacto(self, stringNombre):
         for contacto in self.contactos:
                 if contacto.nombre == stringNombre:
                     return contacto.telefono
+                    pass
                 else:
                     print("No se encontró un contacto con ese nombre")
 
-    def eliminarContacto(self, contacto):
-        self.contactos.nombre.remove(contacto)
+    def eliminarContacto(self, nombre):
+        contador = 0
+        for contacto in self.contactos:
+            if contacto.nombre == nombre:
+                self.contactos.pop(contador)
+            contador += 1
         print("Se eliminó el contacto especificado")
 
     def agendaLlena(self):
@@ -59,19 +66,21 @@ while not opcion== 0:
     print("4- ELIMINAR CONTACTO")
     print("5- VER ESPACIO DISPONIBLE")
     print("0- SALIR")
-    opcion = int(input("Ingrese el número de la opción a seleccionar"))
-    if opcion ==1:
+    opcion = input("Ingrese el número de la opción a seleccionar")
+    if opcion =="1":
         nombre = input("Ingrese el nombre del contacto")
         numero = input("Ingrese el numero del contacto")
         nueva_agenda.anadirContacto(nombre, numero)
-    elif opcion ==2:
+    elif opcion =="2":
         print(nueva_agenda.listarContactos())
-    elif opcion ==3:
+    elif opcion =="3":
         nombre = input("Ingrese el nombre del contacto a buscar")
-        print(nueva_agenda.buscaContacto(nombre))
-    elif opcion ==4:
+        print("Teléfono de", nombre, ":", nueva_agenda.buscaContacto(nombre))
+    elif opcion =="4":
         nombre = input("Ingrese el nombre del contacto a eliminar")
         print(nueva_agenda.eliminarContacto(nombre))
-    elif opcion == 5:
+    elif opcion == "5":
         print("Te quedan", nueva_agenda.huecosLibres(), "espacios libres")
+    else:
+        print("Por favor ingrese una opción válida")
 
