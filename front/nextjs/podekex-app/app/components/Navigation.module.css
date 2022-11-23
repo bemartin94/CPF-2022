@@ -1,0 +1,13 @@
+.header {
+    border: 1px solid grey;
+    padding: 4px;
+}
+
+.navigation {
+    display: flex;
+    list-style: none;
+}
+
+.mr10{
+    margin-right: 10px;
+}

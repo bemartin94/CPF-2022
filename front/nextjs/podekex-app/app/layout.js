@@ -1,14 +1,5 @@
-import Link from 'next/link';
-
-const links= [{
-  label:'Home',
-  route: '/'
-},{
-  label:'About',
-  route: '/about'
-}
-
-]
+import '../styles/globals.css'
+import {Navigation} from './components/Navigation.jsx'
 
 export default function RootLayout({ children }) {
   return (
@@ -16,10 +7,7 @@ export default function RootLayout({ children }) {
       <head />
       <title>poke.next</title>
       <body>
-        <header><nav>
-          <ul>{links.map(({label,route}) => (
-            <li key={route}><Link href={route}>{label} </Link></li>
-          ))} </ul></nav></header>
+        <Navigation />
         {children}</body>
     </html>
   )
